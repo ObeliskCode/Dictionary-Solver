@@ -31,8 +31,6 @@ Start with any directed graph G.
 
 The set X is your FVS.
 
-Note: I created and began work on this algorithm in time with the PACE 2022 DFVS competition and I have found my exact algorithm published by Levy & Low on 1988 in [1].
-
 ## Dataset(s)
 
 https://www.bragitoff.com/2016/03/english-dictionary-in-csv-format/ , WordNet®
