@@ -20,12 +20,34 @@ func LoadDict() dictInterface {
 
 	fmt.Println("loading dictionary...")
 
-	dict := &Dictionary{definitions: make(map[string]*Definition)}
+	dict := &Dictionary{definitions: make(map[string]*Definition, folder: make(string))}
 
 	for ch := 'A'; ch <= 'Z'; ch++ {
 		dict.loadData(string(ch) + ".json")
 	}
 
+	dict.PrintSize()
+
+	t := time.Now()
+	elapsed := t.Sub(start)
+	fmt.Println("\ntime elapsed : ", elapsed)
+
+	fmt.Println()
+
+	return dict
+}
+
+func LoadLLMDict() dictInterface {
+	start := time.Now()
+
+	fmt.Println("loading dictionary...")
+
+	dict := &Dictionary{definitions: make(map[string]*Definition, folder: make(string))}
+
+	dict.setFolder("data/llmgen/")
+
+	dict.loadData("gd.json")
+	
 	dict.PrintSize()
 
 	t := time.Now()

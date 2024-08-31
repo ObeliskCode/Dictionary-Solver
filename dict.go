@@ -9,7 +9,8 @@ import (
 )
 
 type dictInterface interface {
-	getFolder() string
+	getFolder(string)
+	setFolder() string
 	getNames() []string
 	getDef(string) string
 	Print()
@@ -25,6 +26,7 @@ type Dictionary struct {
 	definitions map[string]*Definition
 	//definitions []*Definition
 	// ^--- old DS
+	folder string
 }
 
 type Definition struct {
@@ -32,8 +34,12 @@ type Definition struct {
 	words []string
 }
 
+func (d *Dictionary) setFolder(fp string) {
+	d.folder = fp
+}
+
 func (d *Dictionary) getFolder() string {
-	return "data/old/"
+	return d.folder
 }
 
 func (d *Dictionary) getNames() []string {
@@ -272,6 +278,10 @@ type WNdef struct {
 	regexDef   string
 	regexWords []string
 	mappings   []string
+}
+
+func (wn *WNdict) setFolder(fp string) {
+	d.folder = fp
 }
 
 func (wn *WNdict) getFolder() string {

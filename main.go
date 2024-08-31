@@ -4,7 +4,7 @@ func main() {
 
 	//handleServer("wnSol.json")
 
-	dict := LoadDict()
+	dict := LoadLLMDict()
 	//dict := LoadWNDict()
 
 	Solve(dict)
