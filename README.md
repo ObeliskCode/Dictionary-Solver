@@ -1,6 +1,6 @@
 # Dictionary-Solver
 
-### Minimum Directed Feedback Vertex Set Approximation Algorithm AKA Dictionary Problem - What is the smallest set of words that can be used to define every word in the dictionary?
+Minimum Directed Feedback Vertex Set Approximation Algorithm AKA Dictionary Problem - What is the smallest set of words that can be used to define every word in the dictionary?
 
 ## BUILD INSTRUCTIONS (Linux)
 ```bash
