@@ -9,8 +9,8 @@ import (
 )
 
 type dictInterface interface {
-	getFolder(string)
-	setFolder() string
+	getFolder() string
+	setFolder(string) 
 	getNames() []string
 	getDef(string) string
 	Print()
@@ -270,6 +270,8 @@ func (d *Dictionary) export(delNodes []string) map[string][]string {
 type WNdict struct {
 	IDMappings  map[string]*WNdef
 	definitions map[string][]*WNdef
+
+	folder string
 }
 
 type WNdef struct {
@@ -281,7 +283,7 @@ type WNdef struct {
 }
 
 func (wn *WNdict) setFolder(fp string) {
-	d.folder = fp
+	wn.folder = fp
 }
 
 func (wn *WNdict) getFolder() string {

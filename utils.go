@@ -20,7 +20,9 @@ func LoadDict() dictInterface {
 
 	fmt.Println("loading dictionary...")
 
-	dict := &Dictionary{definitions: make(map[string]*Definition, folder: make(string))}
+	dict := &Dictionary{definitions: make(map[string]*Definition)}
+
+	dict.setFolder("data/old/")
 
 	for ch := 'A'; ch <= 'Z'; ch++ {
 		dict.loadData(string(ch) + ".json")
@@ -42,11 +44,11 @@ func LoadLLMDict() dictInterface {
 
 	fmt.Println("loading dictionary...")
 
-	dict := &Dictionary{definitions: make(map[string]*Definition, folder: make(string))}
+	dict := &Dictionary{definitions: make(map[string]*Definition)}
 
 	dict.setFolder("data/llmgen/")
 
-	dict.loadData("gd.json")
+	dict.loadData("../llmgen/gd.json")
 	
 	dict.PrintSize()
 
